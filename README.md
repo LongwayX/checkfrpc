@@ -11,13 +11,14 @@ scripts for checking frpc service on ubuntu
   cd checkfrpc
   vi checkfrpc/checkfrpc.service   
 ~~~
-  修改 line 13中
+  然后修改 line 13中
   /home/linaro/checkfrpc.sh 
-  为自己下载文件checkfrpc.sh 的绝对路径
+  为自己下载文件checkfrpc.sh 的绝对路径并保存。
+  之后
  ~~~
    vi checkfrpc/checkfrpc.sh
  ~~~
- 修改line 2中 export PYTHONPATH=/usr/lib/python3/dist-packages 为自己python包的路径(绝对路径)<\br>
+ 修改line 2中 export PYTHONPATH=/usr/lib/python3/dist-packages 为自己python包的路径(绝对路径)
  不知道自己python安在哪的可以终端输入
  ~~~
   pip3 list # 查看所有已安装的包
@@ -34,7 +35,7 @@ scripts for checking frpc service on ubuntu
   sudo systemctl start checkfrpc # 开始运行checkfrpc服务
   sudo systemctl status checkfrpc # 查看checkfrpc服务状态
  ~~~
-此时如果出现running(activate) 说明服务启动成功<\br>
+此时如果出现running(activate) 说明服务启动成功
 之后重启，再次查看:
 ~~~
   sudo systemctl status checkfrpc
