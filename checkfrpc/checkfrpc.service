@@ -1,0 +1,13 @@
+[Unit]
+Description=checkfrpc
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=no
+User=root
+ExecStart=/usr/bin/bash /home/linaro/checkfrpc.sh  // 必须为绝对路径
+
+[Install]
+WantedBy=multi-user.target
