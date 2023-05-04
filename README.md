@@ -12,19 +12,19 @@ scripts for checking frpc service on ubuntu
   vi checkfrpc/checkfrpc.service   
 ~~~
   然后修改 line 13中
-  /home/linaro/checkfrpc.sh 
+  <u>*/home/linaro/checkfrpc.sh*</u> 
   为自己下载文件checkfrpc.sh 的绝对路径并保存。
   之后
  ~~~
    vi checkfrpc/checkfrpc.sh
  ~~~
- 修改line 2中 export PYTHONPATH=/usr/lib/python3/dist-packages 为自己python包的路径(绝对路径)
+ 修改line 2中 <u>*export PYTHONPATH=/usr/lib/python3/dist-packages*</u>为自己python包的路径(绝对路径)
  不知道自己python安在哪的可以终端输入
  ~~~
   pip3 list # 查看所有已安装的包
   pip3 show ${package} # 查看某个特定的安装包的路径 从而找到自己python包的绝对路径
  ~~~
- 修改line4 中/home/linaro/checkfrpc.py 为自己下载的checkfrpc.py的绝对路径
+ 修改line4 中 <u>*/home/linaro/checkfrpc.py* </u>为自己下载的checkfrpc.py的绝对路径
  ## 注册为system服务
  运行以下代码
  ~~~
