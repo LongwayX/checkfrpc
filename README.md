@@ -6,25 +6,20 @@ scripts for checking frpc service on ubuntu
 参考此[文章](https://blog.csdn.net/Zhy_201810576/article/details/124546567)
 ## 下载并修改文件
 运行以下指令
-~~~
+~~~bash
   git clone https://github.com/longwayfather/checkfrpc.git
   cd checkfrpc
-  vi checkfrpc/checkfrpc.service   
+  vi checkfrpc.service   
 ~~~
-  然后修改 line 13中
-  <u>*/home/linaro/checkfrpc.sh*</u> 
-  为自己下载文件checkfrpc.sh 的绝对路径并保存。
-  之后
- ~~~
-   vi checkfrpc/checkfrpc.sh
- ~~~
- 修改line 2中 <u>*export PYTHONPATH=/usr/lib/python3/dist-packages*</u>为自己python包的路径(绝对路径)
- 不知道自己python安在哪的可以终端输入
- ~~~
-  pip3 list # 查看所有已安装的包
-  pip3 show ${package} # 查看某个特定的安装包的路径 从而找到自己python包的绝对路径
- ~~~
- 修改line4 中 <u>*/home/linaro/checkfrpc.py* </u>为自己下载的checkfrpc.py的绝对路径
+  修改 line 10
+~~~bash
+ExecStart=/usr/bin/python /root/checkfrpc/checkfrpc.py 
+~~~
+其中/usr/bin/python 修改为自己本地python安装的位置，如不知道可以使用如下命令
+~~~bash
+whereis python
+~~~
+用获取结果中任意一个路径替换/usr/bin/python。（python2\python3皆可）此外，还需更改/root/checkfrpc/checkfrpc.py 为下载的checkfrpc.py的绝对位置
  ## 注册为system服务
  运行以下代码
  ~~~
@@ -42,4 +37,4 @@ scripts for checking frpc service on ubuntu
 ~~~
 如果出现running(activate) 说明自启动设置成功
 # 注意
-以上基于Ubuntu20.04系统，另外为了不浪费系统资源，checkfrpc服务会在25分钟后关闭，属正常现象。
+以上基于Ubuntu20.04系统，（在centos7上测试成功）另外为了不浪费系统资源，checkfrpc服务会在25分钟后关闭，属正常现象。
