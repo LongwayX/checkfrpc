@@ -30,7 +30,7 @@ whereis python
   sudo systemctl start checkfrpc # 开始运行checkfrpc服务
   sudo systemctl status checkfrpc # 查看checkfrpc服务状态
  ~~~
-此时如果出现running(activate) 说明服务启动成功
+此时如果出现active(running) 说明服务启动成功
 之后重启，再次查看:
 ~~~
   sudo systemctl status checkfrpc
