@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=no
 User=root
-ExecStart=/usr/bin/bash /home/linaro/checkfrpc.sh  // 必须为绝对路径
+ExecStart=/usr/bin/python /root/checkfrpc/checkfrpc/checkfrpc.py  // 必须为绝对路径
 
 [Install]
 WantedBy=multi-user.target
