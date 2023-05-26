@@ -23,7 +23,7 @@ whereis python
  ## 注册为system服务
  运行以下代码
  ~~~
-  cp checkfrpc/checkfrpc.service /etc/systemd/system/
+  sudo cp checkfrpc.service /etc/systemd/system/
   sudo chmod +x /etc/systemd/system/checkfrpc.service # 修改权限
   sudo systemctl daemon-reload # 重载系统服务
   sudo systemctl enable checkfrpc.service # 开机自启动checkfrpc.service
