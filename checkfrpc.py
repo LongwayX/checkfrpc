@@ -33,10 +33,10 @@ def start_frpc():
 
 def get_shell_output(shell,to_list=True):
     fd = os.popen(shell)
-    print shell
+    # print shell
     out = fd.read()
     fd.close()
-    print out
+    # print out
     if to_list:
         out = out.split()
     return out
